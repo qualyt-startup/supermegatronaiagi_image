@@ -1,0 +1,19 @@
+version: '3'
+services:
+  app:
+    image: qualytfirst/decentralride:latest
+    ports:
+      - "3000"  # Expose only the internal port for the app
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - app
