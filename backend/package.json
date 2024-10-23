@@ -1,21 +1,22 @@
 {
-  "name": "backend",
+  "name": "decentralized-ride-sharing",
   "version": "1.0.0",
-  "description": "Backend for Decentralized Ride Sharing App",
-  "main": "server.js",
+  "description": "Backend for the Decentralized Ride Sharing application",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["express", "node", "backend", "api"],
+  "keywords": [
+    "decentralized",
+    "ride sharing",
+    "backend"
+  ],
   "author": "Danny Gerhardt",
-  "license": "MIT",
+  "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
   },
   "engines": {
     "node": ">=14.x"
