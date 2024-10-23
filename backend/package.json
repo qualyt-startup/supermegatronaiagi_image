@@ -1,0 +1,17 @@
+{
+  "name": "whisper-search-backend",
+  "version": "1.0.0",
+  "description": "Backend for Whisper-based search engine",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mongoose": "^5.13.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
