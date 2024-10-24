@@ -1,47 +1,43 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const cors = require('cors');
+
 const app = express();
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-// Root endpoint
+// Sample endpoint
 app.get('/', (req, res) => {
-    res.send('Welcome to the Decentralized Ride Sharing API!');
+    res.send('Welcome to the Whisper Search API!');
 });
 
-// Example: Endpoint to create a new user (POST)
-app.post('/api/users', (req, res) => {
-    const newUser = req.body; // Assuming you send user data in the request body
-    // Logic to save the user in the database
-    res.status(201).send(`User created: ${JSON.stringify(newUser)}`);
+// User endpoints
+app.get('/users', (req, res) => {
+    // Logic to get users
+    res.json({ message: 'Get all users' });
 });
 
-// Example: Endpoint to get all users (GET)
-app.get('/api/users', (req, res) => {
-    // Logic to retrieve users from the database
-    const users = []; // Replace with actual user retrieval logic
-    res.status(200).send(users);
+app.post('/users', (req, res) => {
+    // Logic to create a new user
+    res.json({ message: 'User created', user: req.body });
 });
 
-// Example: Endpoint to update a user (PUT)
-app.put('/api/users/:id', (req, res) => {
-    const userId = req.params.id;
-    const updatedUser = req.body; // Data to update the user
-    // Logic to update the user in the database
-    res.send(`User with ID ${userId} updated: ${JSON.stringify(updatedUser)}`);
+app.put('/users/:id', (req, res) => {
+    // Logic to update a user by id
+    res.json({ message: `User ${req.params.id} updated`, user: req.body });
 });
 
-// Example: Endpoint to delete a user (DELETE)
-app.delete('/api/users/:id', (req, res) => {
-    const userId = req.params.id;
-    // Logic to delete the user from the database
-    res.send(`User with ID ${userId} deleted.`);
+app.delete('/users/:id', (req, res) => {
+    // Logic to delete a user by id
+    res.json({ message: `User ${req.params.id} deleted` });
 });
 
-// Start server
+// Add more endpoints as needed
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
