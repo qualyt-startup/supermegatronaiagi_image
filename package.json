@@ -1,17 +1,24 @@
 {
-  "name": "whisper-search-backend",
+  "name": "qualyt-startup",
   "version": "1.0.0",
-  "description": "Backend for Whisper-based search engine",
-  "main": "server.js",
+  "description": "Decentralized Ride Sharing for Qualyt Solutions Group",
+  "main": "server.js",  // Change "server.js" to your actual entry file if necessary
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "pnpm run start:dev",
+    "build": "pnpm build",
+    "test": "pnpm test"
   },
+  "author": "Danny Gerhardt",
+  "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.1",
-    "mongoose": "^5.13.3"
+    // Add your project dependencies here
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    // Add your project dev dependencies here
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=6"
+  }
 }
